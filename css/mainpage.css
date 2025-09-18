@@ -1,0 +1,122 @@
+html, body {
+  height: 100vh;
+  width: 100vw;
+  font-family: Arial, sans-serif;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+@font-face {
+    font-family: 'Runescape';
+    src: url(../assets/RuneScape-Plain-12.ttf) format('truetype');
+}
+
+.background {
+   background-image: url('../assets/background_image.png'); /* Set your image path */
+    background-repeat: no-repeat;
+    background-size: cover;/* Make image cover the whole area */
+    background-position: center; /* Center the image */
+}
+
+.title-text {
+    font-family: 'Runescape', Arial, sans-serif;
+    font-size: 73px;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-weight: bold;
+    color: #ffff00;
+}
+
+.title-bg {
+    background: rgba(0, 0, 0, 0.8); /* solid or semi-transparent rectangle */
+    border: 3px solid #ffd700;
+    box-shadow: 0 4px 32px rgba(0,0,0,0.5);
+    border-radius: 0; /* sharp corners for a rectangle */
+}
+
+
+.centre_img {
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 2400px;
+    height: 1800px;
+    
+}
+
+.mage_att {
+    position: absolute;
+    top: 30%;
+    left: 10%;
+    transform: translate(-50%, -50%);
+    width: 250px;
+    height: 200px;
+    
+}
+
+.melee_att {
+    position: absolute;
+    top: 50%;
+    left: 10%;
+    transform: translate(-50%, -50%);
+    width: 250px;
+    height: 200px;
+    
+}
+
+.range_att {
+    position: absolute;
+    top: 70%;
+    left: 10%;
+    transform: translate(-50%, -50%);
+    width: 250px;
+    height: 200px;
+    
+}
+
+
+.monster-list {
+    position: absolute;
+    font-family: 'Runescape', Arial, sans-serif;
+    font-size: 24px;
+    top: 20%;
+    right: 2%;
+    width: 250px;
+    background: rgba(30, 30, 30, 0.95);
+    border: 2px solid #ffd700;
+    border-radius: 5px;
+    padding: 20px;
+    color: #ffffff;
+    box-shadow: 0 4px 16px rgb(17, 17, 17);
+    z-index: 20;
+}
+
+.monster-list h2 {
+    margin-top: 0;
+    font-size: 1.5em;
+    color: #ffd700;
+    text-align: center;
+}
+
+.monster-list ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.monster-item {
+    padding: 10px;
+    margin-bottom: 8px;
+    background: rgba(60,60,60,0.7);
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.monster-item:hover {
+    background: #ffd700;
+    color: #222;
+}
