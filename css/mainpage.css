@@ -1,10 +1,11 @@
+/* Reset and Base Styles */
 html, body {
   height: 100vh;
   width: 100vw;
-  font-family: Arial, sans-serif;
-  overflow: hidden;
   margin: 0;
   padding: 0;
+  overflow: hidden;
+  font-family: Arial, sans-serif;
 }
 
 @font-face {
@@ -13,139 +14,179 @@ html, body {
 }
 
 .background {
-   background-image: url('../assets/background_image.png'); /* Set your image path */
+    background-image: url('../assets/background_image.png');
     background-repeat: no-repeat;
-    background-size: cover;/* Make image cover the whole area */
-    background-position: center; /* Center the image */
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Visually Hidden (for accessibility) */
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+}
+
+/* ==================== TITLE SECTION ==================== */
+.title-section {
+    width: 100%;
+    padding: 20px 0;
+}
+
+.title-bg {
+    background: rgba(0, 0, 0, 0.8);
+    border: 3px solid #ffd700;
+    box-shadow: 0 4px 32px rgba(0, 0, 0, 0.5);
+    padding: 20px;
 }
 
 .title-text {
     font-family: 'Runescape', Arial, sans-serif;
-    font-size: 73px;
+    font-size: clamp(32px, 5vw, 73px);
     text-align: center;
-    margin-top: 20px;
-    margin-bottom: 20px;
+    margin: 0;
     font-weight: bold;
     color: #ffff00;
+}
+
+/* ==================== MAIN GAME CONTAINER ==================== */
+.game-container {
+    display: grid;
+    grid-template-columns: 200px 1fr 300px;
+    gap: 20px;
+    flex: 1;
+    padding: 20px;
+    align-items: start;
+}
+
+/* ==================== LEFT: COMBAT STYLES ==================== */
+.combat-section {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.combat-styles {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.combat-style {
     width: 100%;
-    height: 100%;
+    height: auto;
+    cursor: pointer;
+    transition: transform 0.2s;
 }
 
-.title-bg {
-    background: rgba(0, 0, 0, 0.8); /* solid or semi-transparent rectangle */
-    border: 3px solid #ffd700;
-    box-shadow: 0 4px 32px rgba(0,0,0,0.5);
-    border-radius: 0; /* sharp corners for a rectangle */
+.combat-style:hover {
+    transform: scale(1.05);
+}
+
+/* ==================== CENTER: MONSTER DISPLAY ==================== */
+.monster-display-section {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 500px;
     width: 100%;
-    height: 10%;
 }
 
-
-.centre_img {
+.arena-background {
     position: absolute;
-    top: 55%;
-    left: 50%;
-    transform: translate(-50%, -50%);
     width: 100%;
-    height: 150%;
-    
+    height: auto;
+    max-height: 600px;
+    object-fit: cover;
+    z-index: 1;
 }
 
-.mage_att {
-    position: absolute;
-    top: 30%;
-    left: 10%;
-    transform: translate(-50%, -50%);
-    width: 20%;
-    height: 20%;
-    
+#monster-container {
+    position: relative;
+    z-index: 10;
+    display: none;
+    max-width: 420px;
+    width: 90%;
+    padding: 18px;
+    color: #ffffff;
 }
-
-.melee_att {
-    position: absolute;
-    top: 50%;
-    left: 10%;
-    transform: translate(-50%, -50%);
-    width: 20%;
-    height: 20%;
-    
-}
-
-.range_att {
-    position: absolute;
-    top: 70%;
-    left: 10%;
-    transform: translate(-50%, -50%);
-    width: 20%;
-    height: 20%;
-    
-}
-
-
-.monster-list {
-    position: absolute;
-    font-family: 'Runescape', Arial, sans-serif;
-    font-size: 24px;
-    top: 20%;
-    right: 2%;
-    width: 15%;
-    height: 30%;;
+/* ==================== RIGHT: MONSTER LIST ==================== */
+.monster-list-section {
     background: rgba(30, 30, 30, 0.95);
     border: 2px solid #ffd700;
     border-radius: 5px;
     padding: 20px;
     color: #ffffff;
-    box-shadow: 0 4px 16px rgb(17, 17, 17);
-    z-index: 20;
+    box-shadow: 0 4px 16px rgba(17, 17, 17, 0.8);
 }
 
-.monster-list h2 {
-    margin-top: 0;
-    font-size: 1.5em;
+.monster-list-section h2 {
+    font-family: 'Runescape', Arial, sans-serif;
+    font-size: 24px;
+    margin: 0 0 15px 0;
     color: #ffd700;
     text-align: center;
 }
 
-.monster-list ul {
+.monster-list {
     list-style: none;
     padding: 0;
     margin: 0;
 }
 
 .monster-item {
+    font-family: 'Runescape', Arial, sans-serif;
+    font-size: 16px;
     padding: 10px;
     margin-bottom: 8px;
-    background: rgba(60,60,60,0.7);
+    background: rgba(60, 60, 60, 0.7);
     border-radius: 5px;
     cursor: pointer;
-    transition: background 0.2s;
+    transition: all 0.2s;
 }
 
 .monster-item:hover {
     background: #ffd700;
     color: #222;
+    transform: translateX(5px);
 }
 
-#monster-container{
-    position: fixed;
-    left: 50%;
-    top: 50%;
-    transform:translate(-50%, -50%);
-    display: none;
-    justify-content: center;
-    align-items: center;
-    z-index: 1000000000;
-    width: 420px;
-    max-width: 90vw;
-    padding: 18px;
-    color: #ffffff;
-    pointer-events: auto;
-
+/* ==================== RESPONSIVE ==================== */
+@media (max-width: 1024px) {
+    .game-container {
+        grid-template-columns: 150px 1fr 250px;
+        gap: 15px;
+    }
 }
 
-#monster-container .monster-img {
-    max-width: 100%;
-    height: auto;
-    display: block;
-    margin: 0 auto;
+@media (max-width: 768px) {
+    .game-container {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto auto;
+    }
+    
+    .combat-section {
+        order: 2;
+    }
+    
+    .monster-display-section {
+        order: 1;
+    }
+    
+    .monster-list-section {
+        order: 3;
+    }
+    
+    .combat-styles {
+        flex-direction: row;
+        justify-content: center;
+    }
 }

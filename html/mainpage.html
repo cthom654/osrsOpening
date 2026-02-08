@@ -8,56 +8,66 @@
   <link href="https://fonts.googleapis.com/css2?family=Baloo+Bhaina&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../css/mainpage.css" />
-  
 </head>
 <body class="background">
-    <div id="title">
+    <header class="title-section">
         <div class="title-bg">
-            <div class="title-text">RNGod or RNGloom</div>
+            <h1 class="title-text">RNGod or RNGloom</h1>
         </div>
-    </div>   
-    <img src="../assets/login_box.png" alt="Centre Image" class="centre_img">
+    </header> 
+    
+    <main class="game-container">
+        <!-- Left: Combat Styles -->
+        <section class="combat-section">
+            <h2 class="visually-hidden">Combat Styles</h2>
+            <div class="combat-styles">
+                <img src="../assets/CombatStyles_IceBarrage(1).png"
+                    alt="Mage Attack"
+                    class="combat-style mage-att"
+                    data-original="../assets/CombatStyles_IceBarrage(1).png"
+                    data-selected="../assets/CombatStyles_IceBarrage(2).png"
+                    data-cursor="../assets/CombatStyles_IceBarrageCursor.png">
+                <img src="../assets/CombatStyles_Whip(1).png"
+                    alt="Melee Attack"
+                    class="combat-style melee-att"
+                    data-original="../assets/CombatStyles_Whip(1).png"
+                    data-selected="../assets/CombatStyles_Whip(2).png"
+                    data-cursor="../assets/CombatStyles_WhipCursor.png">
+                <img src="../assets/CombatStyles_Crossbow(1).png"
+                    alt="Range Attack"
+                    class="combat-style range-att"
+                    data-original="../assets/CombatStyles_Crossbow(1).png"
+                    data-selected="../assets/CombatStyles_Crossbow(2).png"
+                    data-cursor="../assets/CombatStyles_ArmaCursor.png">
+            </div>
+        </section>
 
-    <div id="monster-container" aria-hidden="true">
-        <div class="monster-card">
-        <img id="monster-image" src="../assets/monster_placeholder.png" alt="monster" class="monster-img">
-        <div id="monster-name" class="monster-name"></div>
-        <div class="hp-wrap"><div class="hp-bar" style="width:100%"></div></div>
-        <div class="hp-text"></div>
-        </div>
-    </div>
+        <!-- Center: Monster Display -->
+        <section class="monster-display-section">
+            <img src="../assets/login_box.png" alt="Battle Arena" class="arena-background">
+            <div id="monster-container">
+                <div class="monster-card">
+                    <img id="monster-image" src="../assets/monster_placeholder.png" alt="Current Monster" class="monster-img">
+                    <div id="monster-name" class="monster-name"></div>
+                    <div class="hp-wrap">
+                        <div class="hp-bar" style="width:100%"></div>
+                    </div>
+                    <div class="hp-text"></div>
+                </div>
+            </div>
+        </section>
 
-    <div class="combat-style-container">
-        <img src="../assets/CombatStyles_IceBarrage(1).png"
-             alt="Mage"
-             class="mage_att att_method"
-             data-original="../assets/CombatStyles_IceBarrage(1).png"
-             data-selected="../assets/CombatStyles_IceBarrage(2).png"
-             data-cursor="../assets/CombatStyles_IceBarrageCursor.png">
-    <img src="../assets/CombatStyles_Whip(1).png"
-             alt="Melee"
-             class="melee_att att_method"
-             data-original="../assets/CombatStyles_Whip(1).png"
-             data-selected="../assets/CombatStyles_Whip(2).png"
-             data-cursor="../assets/CombatStyles_WhipCursor.png">
-    <img src="../assets/CombatStyles_Crossbow(1).png"
-             alt="Range"
-             class="range_att att_method"
-             data-original="../assets/CombatStyles_Crossbow(1).png"
-             data-selected="../assets/CombatStyles_Crossbow(2).png"
-             data-cursor="../assets/CombatStyles_ArmaCursor.png">
-    </div>
+        <!-- Right: Monster List -->
+        <aside class="monster-list-section">
+            <h2>Monsters</h2>
+            <ul class="monster-list">
+                <li class="monster-item" data-monster="Zulrah">Zulrah (Serpintine)</li>
+                <li class="monster-item" data-monster="Cerberus">Cerberus</li>
+                <li class="monster-item" data-monster="Callisto">Callisto</li>
+            </ul>
+        </aside>
+    </main>
 
-    <div class="monster-list">
-        <h2>Monsters</h2>
-        <ul>
-            <li class="monster-item" data-monster="Zulrah">Zulrah (Serpintine)</li>
-            <li class="monster-item" data-monster="Cerberus">Cerberus</li>
-            <li class="monster-item" data-monster="Callisto">Callisto</li>
-            <!-- Add more monsters as needed -->
-        </ul>
-    </div>
-
-    <script src="../Java/mainpage.js"></script>
+<script src="../Java/mainpage.js"></script>
 </body>
 </html>
