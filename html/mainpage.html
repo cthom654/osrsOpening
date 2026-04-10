@@ -21,24 +21,24 @@
         <section class="combat-section">
             <h2 class="visually-hidden">Combat Styles</h2>
             <div class="combat-styles">
-                <img src="../assets/CombatStyles_IceBarrage(1).png"
-                    alt="Mage Attack"
-                    class="combat-style mage-att"
+                <button type="button" class="combat-style mage-att" aria-label="Mage Attack"
                     data-original="../assets/CombatStyles_IceBarrage(1).png"
                     data-selected="../assets/CombatStyles_IceBarrage(2).png"
                     data-cursor="../assets/CombatStyles_IceBarrageCursor.png">
-                <img src="../assets/CombatStyles_Whip(1).png"
-                    alt="Melee Attack"
-                    class="combat-style melee-att"
+                    <img src="../assets/CombatStyles_IceBarrage(1).png" alt="Mage Attack">
+                </button>
+                <button type="button" class="combat-style melee-att" aria-label="Melee Attack"
                     data-original="../assets/CombatStyles_Whip(1).png"
                     data-selected="../assets/CombatStyles_Whip(2).png"
                     data-cursor="../assets/CombatStyles_WhipCursor.png">
-                <img src="../assets/CombatStyles_Crossbow(1).png"
-                    alt="Range Attack"
-                    class="combat-style range-att"
+                    <img src="../assets/CombatStyles_Whip(1).png" alt="Melee Attack">
+                </button>
+                <button type="button" class="combat-style range-att" aria-label="Range Attack"
                     data-original="../assets/CombatStyles_Crossbow(1).png"
                     data-selected="../assets/CombatStyles_Crossbow(2).png"
                     data-cursor="../assets/CombatStyles_ArmaCursor.png">
+                    <img src="../assets/CombatStyles_Crossbow(1).png" alt="Range Attack">
+                </button>
             </div>
         </section>
 
@@ -53,6 +53,7 @@
                         <div class="hp-bar" style="width:100%"></div>
                     </div>
                     <div class="hp-text"></div>
+                    <div id="monster-drop-table" hidden></div>
                 </div>
             </div>
         </section>
@@ -61,9 +62,15 @@
         <aside class="monster-list-section">
             <h2>Monsters</h2>
             <ul class="monster-list">
-                <li class="monster-item" data-monster="Zulrah">Zulrah (Serpintine)</li>
-                <li class="monster-item" data-monster="Cerberus">Cerberus</li>
-                <li class="monster-item" data-monster="Callisto">Callisto</li>
+                <li>
+                    <button type="button" class="monster-item" data-monster="Zulrah">Zulrah (Serpintine)</button>
+                </li>
+                <li>
+                    <button type="button" class="monster-item" data-monster="Cerberus">Cerberus</button>
+                </li>
+                <li>
+                    <button type="button" class="monster-item" data-monster="Callisto">Callisto</button>
+                </li>
             </ul>
         </aside>
     </main>

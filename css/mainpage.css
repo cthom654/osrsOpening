@@ -83,11 +83,24 @@ html, body {
     width: 100%;
     height: auto;
     cursor: pointer;
-    transition: transform 0.2s;
+    transition: transform 0.2s, box-shadow 0.2s;
+    border: none;
+    background: transparent;
+    padding: 0;
+    display: block;
+    text-align: left;
 }
 
-.combat-style:hover {
+.combat-style img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.combat-style:hover,
+.combat-style:focus {
     transform: scale(1.05);
+    outline: none;
 }
 
 /* ==================== CENTER: MONSTER DISPLAY ==================== */
@@ -142,21 +155,36 @@ html, body {
     margin: 0;
 }
 
+.monster-list li {
+    margin-bottom: 8px;
+}
+
 .monster-item {
     font-family: 'Runescape', Arial, sans-serif;
     font-size: 16px;
     padding: 10px;
-    margin-bottom: 8px;
+    width: 100%;
     background: rgba(60, 60, 60, 0.7);
     border-radius: 5px;
+    border: none;
+    color: #ffffff;
+    text-align: left;
     cursor: pointer;
     transition: all 0.2s;
 }
 
-.monster-item:hover {
+.monster-item:hover,
+.monster-item:focus {
     background: #ffd700;
     color: #222;
     transform: translateX(5px);
+    outline: none;
+}
+
+.monster-item.selected {
+    background: #ffd700;
+    color: #222;
+    box-shadow: 0 0 0 2px #ffd700;
 }
 
 /* ==================== RESPONSIVE ==================== */
