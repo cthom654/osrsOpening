@@ -218,3 +218,141 @@ html, body {
         justify-content: center;
     }
 }
+
+/* ==================== MONSTER CARD ==================== */
+#monster-container {
+    background: rgba(15, 15, 15, 0.95);
+    border: 2px solid #ffd700;
+    border-radius: 6px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    max-width: 400px;
+    width: 90%;
+    box-shadow: 0 0 24px rgba(255, 215, 0, 0.15);
+}
+
+/* Monster image */
+#monster-image {
+    max-width: 180px;
+    max-height: 180px;
+    object-fit: contain;
+    image-rendering: pixelated;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Name */
+#monster-name {
+    font-family: 'Runescape', Arial, sans-serif;
+    font-size: 22px;
+    color: #ffd700;
+    text-align: center;
+}
+
+/* HP bar track */
+.hp-wrap {
+    width: 100%;
+    background: #3a0000;
+    border-radius: 4px;
+    height: 18px;
+    overflow: hidden;
+    border: 1px solid #600;
+}
+
+/* HP bar fill */
+.hp-bar {
+    height: 100%;
+    width: 100%;
+    background: #00b800;
+    border-radius: 4px;
+    transition: width 0.4s ease, background 0.4s ease;
+}
+
+/* HP text */
+.hp-text {
+    font-family: 'Runescape', Arial, sans-serif;
+    font-size: 13px;
+    color: #cccccc;
+    text-align: center;
+}
+
+/* Weakness */
+#monster-weakness {
+    font-family: 'Runescape', Arial, sans-serif;
+    font-size: 14px;
+    color: #ff9900;
+    background: rgba(255, 153, 0, 0.08);
+    border: 1px solid #ff9900;
+    border-radius: 4px;
+    padding: 5px 14px;
+    width: 100%;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+/* ==================== DROP TABLE ==================== */
+#monster-drop-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: 'Runescape', Arial, sans-serif;
+    font-size: 13px;
+    margin-top: 6px;
+}
+
+#monster-drop-table tr {
+    border-bottom: 1px solid rgba(255, 215, 0, 0.1);
+    transition: background 0.15s;
+}
+
+#monster-drop-table tr:hover {
+    background: rgba(255, 215, 0, 0.06);
+}
+
+/* Column: item name */
+#monster-drop-table td:nth-child(1) {
+    color: #ffffff;
+    padding: 5px 8px;
+    width: 55%;
+}
+
+/* Column: quantity */
+#monster-drop-table td:nth-child(2) {
+    color: #aaaaaa;
+    padding: 5px 8px;
+    text-align: center;
+    width: 15%;
+}
+
+/* Column: rarity */
+#monster-drop-table td:nth-child(3) {
+    padding: 5px 8px;
+    text-align: right;
+    width: 30%;
+    font-size: 11px;
+    font-weight: bold;
+    text-transform: capitalize;
+}
+
+/* Rarity colours */
+#monster-drop-table td:nth-child(3)[data-rarity="always"]     { color: #00ff00; }
+#monster-drop-table td:nth-child(3)[data-rarity="common"]     { color: #aaaaaa; }
+#monster-drop-table td:nth-child(3)[data-rarity="uncommon"]   { color: #44cc44; }
+#monster-drop-table td:nth-child(3)[data-rarity="rare"]       { color: #4488ff; }
+#monster-drop-table td:nth-child(3)[data-rarity="very rare"]  { color: #cc44ff; }
+
+/* Scrollable if lots of drops */
+.drop-scroll-wrap {
+    max-height: 200px;
+    overflow-y: auto;
+    width: 100%;
+    scrollbar-width: thin;
+    scrollbar-color: #ffd700 #1a1a1a;
+}
+
+.drop-scroll-wrap::-webkit-scrollbar       { width: 5px; }
+.drop-scroll-wrap::-webkit-scrollbar-track { background: #1a1a1a; }
+.drop-scroll-wrap::-webkit-scrollbar-thumb { background: #ffd700; border-radius: 3px; }

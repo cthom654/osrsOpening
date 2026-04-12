@@ -53,6 +53,7 @@
                         <div class="hp-bar" style="width:100%"></div>
                     </div>
                     <div class="hp-text"></div>
+                    <div id="monster-weakness"></div>
                     <div id="monster-drop-table" hidden></div>
                 </div>
             </div>
@@ -63,13 +64,13 @@
             <h2>Monsters</h2>
             <ul class="monster-list">
                 <li>
-                    <button type="button" class="monster-item" data-monster="Zulrah">Zulrah (Serpintine)</button>
+                    <button type="button" class="monster-item" onclick="loadMonster('Corporeal Beast')">Corporeal Beast</button>
                 </li>
                 <li>
-                    <button type="button" class="monster-item" data-monster="Cerberus">Cerberus</button>
+                    <button type="button" class="monster-item" onclick="loadMonster('Cerberus')">Cerberus</button>
                 </li>
                 <li>
-                    <button type="button" class="monster-item" data-monster="Callisto">Callisto</button>
+                    <button type="button" class="monster-item" onclick="loadMonster('Callisto')">Callisto</button>
                 </li>
             </ul>
         </aside>
