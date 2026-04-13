@@ -1,46 +1,17 @@
 RNGod or RNGloom
-An OSRS (Old School RuneScape) drop simulator that lets you test your luck against various monsters.
+An Old School RuneScape drop simulator built as part of my frontend portfolio.
+Pick a monster, select your combat style, and click to attack. Each monster has a weakness — use the wrong style and nothing happens. Kill it and you'll get a randomly weighted drop pulled straight from the OSRS wiki API.
 Features
 
-Monster Selection: Choose from different OSRS monsters including Zulrah, Cerberus, and Callisto
-Combat Styles: Select between Mage, Melee, and Range attack styles with themed cursors
-Monster Data: Pulls monster information from the OSRS Wiki API
-Retro UI: Styled with RuneScape fonts and authentic game aesthetics
+Three monsters: Corporeal Beast, Cerberus, and Callisto
+Combat style system — only the correct style deals damage
+Drop table pulled live from the OSRS wiki
+Weighted RNG drop roll on kill
+HP bar that tracks damage and reacts on death
 
-File Structure
-├── index.html
-├── css/
-│   └── mainpage.css
-├── Java/
-│   └── mainpage.js
-└── assets/
-    ├── background_image.png
-    ├── login_box.png
-    ├── monster_placeholder.png
-    ├── RuneScape-Plain-12.ttf
-    └── CombatStyles_*.png
-Setup
-
-Clone or download this repository
-Ensure all asset files are in the assets/ folder
-Open index.html in a web browser
-
-Usage
-
-Select a combat style (Mage, Melee, or Range) from the left side
-Choose a monster from the list on the right
-The monster card will display with HP bar and stats
-Click to simulate combat and drops
-
-Technologies
-
-Vanilla JavaScript
-OSRS Wiki API integration
-Custom RuneScape font
-CSS animations and styling
-
+Stack
+HTML, CSS, Vanilla JS — no frameworks. Monster data and images fetched from the OSRS Wiki API.
+Run it
+Just open index.html in a browser. No build step needed.
 Notes
-
-Monster data is cached to minimize API calls
-Responsive HP bar system
-Custom cursor changes based on selected combat style
+This is one of three portfolio projects. The focus here was on DOM manipulation, async API calls, and building something that actually feels like a game without reaching for a framework.
