@@ -54,7 +54,7 @@
                     </div>
                     <div class="hp-text"></div>
                     <div id="monster-weakness"></div>
-                    <div id="monster-drop-table" hidden></div>
+                    <table id="monster-drop-table" hidden></table>
                 </div>
             </div>
         </section>
@@ -75,6 +75,15 @@
             </ul>
         </aside>
     </main>
+
+    <div id="drop-modal">
+        <div id="drop-modal-content">
+            <h2 id="drop-modal-title"></h2>
+            <img id="drop-modal-img" src="" alt="" style="max-width:80px; image-rendering:pixelated; margin-bottom:10px;">
+            <p id="drop-modal-item"></p>
+            <button onclick="document.getElementById('drop-modal').style.display='none'">Close</button>
+        </div>
+    </div>
 
 <script src="../Java/mainpage.js"></script>
 </body>
