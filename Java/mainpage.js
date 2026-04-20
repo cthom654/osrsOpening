@@ -1,3 +1,5 @@
+let currentMonsterMaxHp = 0;
+
 document.addEventListener('DOMContentLoaded', function() {
     const combatStyles = document.querySelectorAll('.combat-style');
  
@@ -124,6 +126,17 @@ async function showDropModal() {
     document.getElementById('drop-modal').style.display     = 'flex';
 }
 
+function closeDropModal() {
+    document.getElementById('drop-modal').style.display = 'none';
+    if (currentMonsterMaxHp > 0) {
+        const hpText = document.querySelector('.hp-text');
+        const hpBar  = document.querySelector('.hp-bar');
+        hpText.textContent = `HP: ${currentMonsterMaxHp} / ${currentMonsterMaxHp}`;
+        hpBar.style.width   = '100%';
+        hpBar.style.background = '#00b800';
+    }
+}
+
 
 async function loadMonster(name) {
     const params = new URLSearchParams({
@@ -154,6 +167,7 @@ async function loadMonster(name) {
 
     const imageUrl = mainPage?.original?.source ?? '../assets/monster_placeholder.png';
     const hp       = wikitext.match(/\|\s*hitpoints\s*=\s*(\d+)/)?.[1] ?? '???';
+    currentMonsterMaxHp = parseInt(hp, 10) || 0;
 
     const weaknessMap = {
         'Cerberus':        'Melee',
